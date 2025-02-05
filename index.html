@@ -1,324 +1,619 @@
-<!DOCTYPE html>
-<html lang="pl">
-
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Syrup</title>
     <style>
 
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
-      @font-face {
-        font-family: "HurmeGeometricSans3-Bold";
-        src: local("HurmeGeometricSans3-Bold"), url("./fonts/HurmeGeometricSans3-Bold.woff2") format("truetype");
-      }
-      @font-face {
-        font-family: "HurmeGeometricSans3-Regular";
-        src: local("HurmeGeometricSans3-Regular"), url("./fonts/HurmeGeometricSans3-Regular.woff2") format("truetype");
-      }
-      @font-face {
-        font-family: "HurmeGeometricSans3-Black";
-        src: local("HurmeGeometricSans3-Black"), url("./fonts/HurmeGeometricSans3-Black.woff2") format("truetype");
-      }
-      @font-face {
-        font-family: "HurmeGeometricSans3-Light";
-        src: local("HurmeGeometricSans3-Light"), url("./fonts/HurmeGeometricSans3-Light.woff2") format("truetype");
-      }
-      @font-face {
-        font-family: "Gazpacho-Bold";
-        src: local("Gazpacho-Bold"), url("./fonts/Gazpacho-Bold.woff2") format("truetype");
-      }
-      @font-face {
-        font-family: empik, "Gazpacho-Regular";
-        src: local("Gazpacho-Regular"), url("./fonts/Gazpacho-Regular.woff2") format("truetype");
-      }
-      #es-rc-content.es-rc {
-        font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 1.2;
-        max-width: 830px;
-        margin: 0 auto;
-        padding: 0;
-        overflow: hidden;
-        color: #000000;
-        background: #e8e2d4;
-      }
-      #es-rc-content.es-rc {
-        line-height: inherit !important;
-      }
-      #es-rc-content.es-rc .es-title {
-        margin: 0;
-        padding: 0;
-        line-height: inherit;
-        color: inherit;
-        text-align: center;
-        margin-bottom: 32px;
-        margin-top: 32px;
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: 36px;
-      }
-      #es-rc-content.es-rc html,
-      #es-rc-content.es-rc body {
-        margin: 0;
-        padding: 0;
-      }
-      #es-rc-content.es-rc * {
-        box-sizing: border-box;
-      }
-      #es-rc-content.es-rc p {
-        margin: 0;
-      }
-      #es-rc-content.es-rc h2 {
-        margin: 0;
-      }
-      #es-rc-content.es-rc .es-kv {
-        margin: 0;
-        padding: 0;
-        padding-left: 5px;
-        padding-right: 5px;
-        position: relative;
-      }
-      #es-rc-content.es-rc .es-kv__logo {
-        position: relative;
-        margin: 0 auto;
-        padding: 20px 15px;
-        max-width: 90%;
-      }
-      #es-rc-content.es-rc .es-kv__title {
-        position: relative;
-        margin: 0;
-        padding: 0;
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        padding-top: 5px;
-        padding-bottom: 15px;
-        text-align: center;
-        font-size: 35px;
-        font-weight: 700;
-        line-height: 1;
-      }
-      #es-rc-content.es-rc .es-kv__title--small {
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: 14px;
-        text-align: center;
-      }
-      #es-rc-content.es-rc .es-kv__subtitle {
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        text-align: center;
-        font-size: 18px;
-        padding-bottom: 15px;
-      }
-      #es-rc-content.es-rc .es-kv__packshot {
-        position: relative;
-      }
-      #es-rc-content.es-rc .es-kv__packshot--photo {
-        max-width: 100%;
-        display: block;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-      }
-      #es-rc-content.es-rc .es-kv__img {
-        max-width: 60%;
-        display: block;
-        margin: 0 auto;
-      }
-      #es-rc-content.es-rc .es-kv__text {
-        font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
-        font-weight: 400;
-        margin: 0 auto;
-        margin-bottom: 30px;
-        text-align: center;
-        padding: 0 10px;
-        font-size: 16px;
-      }
-      #es-rc-content.es-rc .es-info {
-        margin: 0;
-        padding: 0;
-      }
-      #es-rc-content.es-rc .es-info__title {
-        position: relative;
-        margin: 0;
-        padding: 0;
-        margin: 0 auto;
-        color: #000000;
-        padding: 25px;
-        text-align: center;
-        font-size: 27px;
-      }
-      #es-rc-content.es-rc .es-info__title--large {
-        display: block;
-        text-align: right;
-        font-size: 32px;
-      }
-      #es-rc-content.es-rc .es-info__text {
-        width: 90%;
-        margin: 0;
-        padding: 0;
-        font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
-        font-weight: 400;
-        font-weight: 500;
-        color: #000000;
-        padding: 0 15px 25px;
-        margin: 0 auto;
-      }
-      #es-rc-content.es-rc .es-info__text b {
-        font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-      }
-      #es-rc-content.es-rc .es-possibilities {
-        margin: 30px 0 0;
-        padding-top: 75px;
-      }
-      #es-rc-content.es-rc .es-possibilities__title {
-        position: relative;
-        margin: 0;
-        padding: 0;
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        padding: 15px 15px 0;
-        font-size: 19px;
-        font-weight: 700;
-      }
-      #es-rc-content.es-rc .es-possibilities__title--first {
-        margin-top: -30px;
-        text-align: right;
-      }
-      #es-rc-content.es-rc .es-possibilities__title--second {
-        position: absolute;
-        top: 44%;
-        left: -10px;
-        color: #e8e2d4;
-      }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+    @font-face {
+      font-family: "HurmeGeometricSans3-Bold";
+      src: local("HurmeGeometricSans3-Bold"), url("./fonts/HurmeGeometricSans3-Bold.woff2") format("truetype");
+    }
+    @font-face {
+      font-family: "HurmeGeometricSans3-Regular";
+      src: local("HurmeGeometricSans3-Regular"), url("./fonts/HurmeGeometricSans3-Regular.woff2") format("truetype");
+    }
+    @font-face {
+      font-family: "HurmeGeometricSans3-Black";
+      src: local("HurmeGeometricSans3-Black"), url("./fonts/HurmeGeometricSans3-Black.woff2") format("truetype");
+    }
+    @font-face {
+      font-family: "HurmeGeometricSans3-Light";
+      src: local("HurmeGeometricSans3-Light"), url("./fonts/HurmeGeometricSans3-Light.woff2") format("truetype");
+    }
+    @font-face {
+      font-family: "Gazpacho-Bold";
+      src: local("Gazpacho-Bold"), url("./fonts/Gazpacho-Bold.woff2") format("truetype");
+    }
+    @font-face {
+      font-family: "Gazpacho-Regular";
+      src: local("Gazpacho-Regular"), url("./fonts/Gazpacho-Regular.woff2") format("truetype");
+    }
+    #es-rc-content.es-rc {
+      font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.2;
+      max-width: 830px;
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+      color: #000000 !important;
+      background: #e8e2d4;
+    }
+    #es-rc-content.es-rc p {
+      line-height: inherit !important;
+      color: inherit !important;
+    }
+    #es-rc-content.es-rc .es-title {
+      margin: 0;
+      padding: 0;
+      line-height: inherit;
+      color: inherit !important;
+      text-align: center;
+      margin-bottom: 32px;
+      margin-top: 32px;
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+    }
+    #es-rc-content.es-rc html,
+    #es-rc-content.es-rc body {
+      margin: 0;
+      padding: 0;
+    }
+    #es-rc-content.es-rc * {
+      box-sizing: border-box;
+    }
+    #es-rc-content.es-rc p {
+      margin: 0;
+    }
+    #es-rc-content.es-rc h2 {
+      margin: 0;
+    }
+    #es-rc-content.es-rc .es-kv {
+      margin: 0;
+      padding: 0;
+      padding-left: 5px;
+      padding-right: 5px;
+      position: relative;
+    }
+    #es-rc-content.es-rc .es-kv__logo {
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 15px;
+      max-width: 90%;
+    }
+    #es-rc-content.es-rc .es-kv__title {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      padding-top: 5px;
+      padding-bottom: 15px;
+      text-align: center;
+      font-size: 35px;
+      font-weight: 700;
+      line-height: 1;
+      color: inherit !important;
+    }
+    #es-rc-content.es-rc .es-kv__title--small {
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+    }
+    #es-rc-content.es-rc .es-kv__subtitle {
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      text-align: center;
+      font-size: 18px;
+      padding-bottom: 15px;
+    }
+    #es-rc-content.es-rc .es-kv__packshot {
+      position: relative;
+    }
+    #es-rc-content.es-rc .es-kv__packshot--photo {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    #es-rc-content.es-rc .es-kv__img {
+      max-width: 60%;
+      display: block;
+      margin: 0 auto;
+    }
+    #es-rc-content.es-rc .es-kv__text {
+      font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
+      font-weight: 400;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      text-align: center;
+      padding: 0 10px;
+      color: inherit !important;
+      font-size: 16px;
+    }
+    #es-rc-content.es-rc .es-info {
+      margin: 0;
+      padding: 0;
+    }
+    #es-rc-content.es-rc .es-info__title {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      margin: 0 auto;
+      color: #000000;
+      padding: 25px;
+      text-align: center;
+      font-size: 27px;
+    }
+    #es-rc-content.es-rc .es-info__title--large {
+      display: block;
+      text-align: right;
+      font-size: 32px;
+    }
+    #es-rc-content.es-rc .es-info__text {
+      width: 90%;
+      margin: 0;
+      padding: 0;
+      font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
+      font-weight: 400;
+      font-weight: 500;
+      color: #000000;
+      padding: 0 15px 25px;
+      margin: 0 auto;
+    }
+    #es-rc-content.es-rc .es-info__text b {
+      font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+    }
+    #es-rc-content.es-rc .es-possibilities {
+      margin: 30px 0 0;
+      padding-top: 75px;
+    }
+    #es-rc-content.es-rc .es-possibilities__title {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      padding: 15px 15px 0;
+      font-size: 19px;
+      font-weight: 700;
+    }
+    #es-rc-content.es-rc .es-possibilities__title--first {
+      margin-top: -30px;
+      text-align: right;
+    }
+    #es-rc-content.es-rc .es-possibilities__title--second {
+      position: absolute;
+      top: 44%;
+      left: -10px;
+      color: #e8e2d4;
+    }
+    #es-rc-content.es-rc .es-possibilities__title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: -60px;
+    }
+    #es-rc-content.es-rc .es-possibilities__title-group {
+      position: relative;
+      max-width: 50%;
+      min-width: 50%;
+    }
+    #es-rc-content.es-rc .es-possibilities__subtitle {
+      margin: 0;
+      padding: 0;
+      padding-top: 20px;
+      padding-right: 10px;
+      font-size: 19px;
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      text-align: right;
+    }
+    #es-rc-content.es-rc .es-possibilities__img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      margin-top: -103px;
+    }
+    #es-rc-content.es-rc .es-possibilities__text {
+      padding: 15px;
+      font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
+      font-weight: 400;
+    }
+    #es-rc-content.es-rc .es-possibilities__packshot {
+      margin: 0 auto;
+      display: block;
+      max-width: 100%;
+      max-width: 60%;
+      padding-left: 45px;
+    }
+    #es-rc-content.es-rc .es-photo__img {
+      max-width: 90%;
+      display: block;
+      margin: 0 auto;
+      padding: 5px 5px;
+    }
+    #es-rc-content.es-rc .es-photo__img {
+      margin-left: -1%;
+    }
+    #es-rc-content.es-rc .es-photo__img--syrups {
+      margin: 0 auto;
+    }
+    #es-rc-content.es-rc .es-triple__title {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      padding: 15px 15px 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 36px;
+      font-weight: 700;
+    }
+    #es-rc-content.es-rc .es-triple__text {
+      margin: 0;
+      padding: 0;
+      line-height: inherit;
+      color: inherit !important;
+      font-family: inherit;
+      font-weight: inherit;
+      margin: 0 auto;
+      width: 80%;
+      font-size: 19px;
+      font-family: empik, "HurmeGeometricSans3-Light", "Roboto", sans-serif;
+      text-align: center;
+      padding: 0 15px 30px;
+    }
+    #es-rc-content.es-rc .es-triple__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
+    #es-rc-content.es-rc .es-triple__mobile-container {
+      position: relative;
+    }
+    #es-rc-content.es-rc .es-triple__single {
+      height: 100%;
+      position: relative;
+    }
+    #es-rc-content.es-rc .es-triple__desc {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 25px;
+      left: 0;
+      font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 35px;
+      text-align: center;
+      padding-top: 20px;
+    }
+    #es-rc-content.es-rc .es-triple__desc--first {
+      top: 20%;
+      left: 24%;
+    }
+    #es-rc-content.es-rc .es-triple__desc--second {
+      top: 32%;
+      left: 41%;
+    }
+    #es-rc-content.es-rc .es-triple__desc--third {
+      top: 21%;
+      left: 16%;
+    }
+    #es-rc-content.es-rc .es-triple__desc-mobile--first, #es-rc-content.es-rc .es-triple__desc-mobile--second, #es-rc-content.es-rc .es-triple__desc-mobile--third {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      font-family: empik, "HurmeGeometricSans3-Black", "Roboto", sans-serif;
+      font-weight: 800;
+      color: #ffffff !important;
+      font-size: 45px;
+      text-align: center;
+    }
+    #es-rc-content.es-rc .es-triple__desc-mobile--first {
+      top: 12%;
+      left: 23%;
+    }
+    #es-rc-content.es-rc .es-triple__desc-mobile--second {
+      top: 41%;
+      left: 37%;
+    }
+    #es-rc-content.es-rc .es-triple__desc-mobile--third {
+      top: 61%;
+      left: 16%;
+    }
+    #es-rc-content.es-rc .es-triple__desktop-container {
+      display: none;
+    }
+    #es-rc-content.es-rc .es-triple__img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      min-width: 250px;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-title {
+      margin-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-description {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 30px;
+      font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night {
+      position: relative;
+      margin-bottom: 50px;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night--second {
+      margin-bottom: 100px;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-label {
+      position: absolute;
+      margin-top: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 60px;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-label--first {
+      color: #ffffff;
+      top: 12%;
+      left: 40%;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-label--second {
+      color: #000000;
+      top: -6%;
+      left: 0%;
+    }
+    #es-rc-content.es-rc .es-recipes__img {
+      margin: 0 auto;
+      display: block;
+      max-width: 100%;
+    }
+    #es-rc-content.es-rc .es-recipes__img--night-desktop {
+      display: none !important;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title {
+      margin-bottom: 20px;
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title--small {
+      margin-bottom: 20px;
+      font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-recipe-content {
+      padding-left: 10px;
+      padding-right: 10px;
+      z-index: 1;
+      font-size: 13px;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
+      background-color: black;
+      color: white;
+      -webkit-clip-path: polygon(0 0%, 100% 14%, 100% 100%, 0 89%);
+              clip-path: polygon(0 0%, 100% 14%, 100% 100%, 0 89%);
+      padding-top: 30%;
+      padding-bottom: 90px;
+      margin-top: -38%;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-recipe-content-ingredients-list {
+      padding-left: 32px;
+      max-width: 90%;
+    }
+    #es-rc-content.es-rc .es-recipes__day-night-recipe-content-ingredients-list li {
+      margin-bottom: 10px;
+    }
+    #es-rc-content.es-rc .es-lemonade__title {
+      margin-bottom: 10px;
+    }
+    #es-rc-content.es-rc .es-lemonade__title-group {
+      position: relative;
+    }
+    #es-rc-content.es-rc .es-lemonade__title-image {
+      margin: 0 auto;
+      display: block;
+      max-width: 100%;
+      max-width: 50%;
+      margin-left: 5%;
+    }
+    #es-rc-content.es-rc .es-lemonade__title-pepper {
+      margin: 0 auto;
+      display: block;
+      max-width: 100%;
+      position: absolute;
+      max-width: 23%;
+      top: -156%;
+      right: -1%;
+    }
+    #es-rc-content.es-rc .es-lemonade__subtitle {
+      margin-bottom: 10px;
+      padding-left: 10px;
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      text-align: left;
+      font-size: 18px;
+    }
+    #es-rc-content.es-rc .es-lemonade__subtitle--big {
+      padding-left: 20px;
+      font-size: 19px;
+    }
+    #es-rc-content.es-rc .es-lemonade__image {
+      margin: 0 auto;
+      display: block;
+      max-width: 100%;
+    }
+    #es-rc-content.es-rc .es-lemonade__image--bottle {
+      max-width: 60%;
+      padding-left: 45px;
+      margin-bottom: 30px;
+    }
+    #es-rc-content.es-rc .es-lemonade__content {
+      padding-top: 30px;
+      margin-bottom: 50px;
+    }
+    #es-rc-content.es-rc .es-lemonade__text {
+      font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
+      font-weight: 400;
+      margin-bottom: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    #es-rc-content.es-rc .es-lemonade__group {
+      max-width: 400px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    #es-rc-content.es-rc .es-lemonade__group-list {
+      max-width: 400px;
+    }
+    #es-rc-content.es-rc .es-lemonade__group-title {
+      max-width: 400px;
+      margin-bottom: 10px;
+    }
+    #es-rc-content.es-rc .es-lemonade__group-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    #es-rc-content.es-rc .es-lemonade__group-list-item-description {
+      max-width: 66%;
+    }
+    #es-rc-content.es-rc .es-lemonade__group-list-item-image {
+      margin: 0 auto;
+      display: block;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 70px;
+    }
+    #es-rc-content.es-rc .es-lemonade__bold {
+      font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+    }
+    #es-rc-content.es-rc .es-lemonade__image-group {
+      position: relative;
+    }
+    #es-rc-content.es-rc .es-lemonade__image-group-text {
+      position: absolute;
+      top: 43%;
+      left: 16%;
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 25px;
+    }
+    #es-rc-content.es-rc .es-video {
+      margin: 0 auto 34px;
+      width: 95%;
+      position: relative;
+    }
+    #es-rc-content.es-rc .es-video__title {
+      margin: 0;
+      padding: 0;
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #es-rc-content.es-rc .es-video__subtitle {
+      margin: 0;
+      padding: 0;
+      font-family: empik, "Gazpacho-Regular";
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    #es-rc-content.es-rc .es-video__subtitle-second {
+      font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 23px;
+    }
+    #es-rc-content.es-rc .es-video__text {
+      font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
+      font-weight: 400;
+      text-align: center;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    #es-rc-content.es-rc .es-video__container {
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      padding-bottom: 46.25%;
+      height: 0;
+    }
+    #es-rc-content.es-rc .es-video__iframe {
+      border: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      max-height: 540px;
+    }
+    #es-rc-content.es-rc .es-video__img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+    }
+    #es-rc-content.es-rc .es-photo__text {
+      font-size: 23px;
+    }
+    @media screen and (min-width: 400px) {
       #es-rc-content.es-rc .es-possibilities__title-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        top: -60px;
+        top: -45px;
       }
-      #es-rc-content.es-rc .es-possibilities__title-group {
-        position: relative;
-        max-width: 50%;
-        min-width: 50%;
+    }
+    @media screen and (min-width: 500px) {
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content {
+        font-size: 16px;
       }
-      #es-rc-content.es-rc .es-possibilities__subtitle {
-        margin: 0;
-        padding: 0;
-        padding-top: 20px;
-        padding-right: 10px;
-        font-size: 19px;
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        text-align: right;
+      #es-rc-content.es-rc .es-recipes__day-night {
+        margin-bottom: 100px;
       }
-      #es-rc-content.es-rc .es-possibilities__img {
-        max-width: 100%;
-        display: block;
+      #es-rc-content.es-rc .es-recipes__day-night-group {
+        max-width: 395px;
         margin: 0 auto;
-        margin-top: -103px;
+        margin-left: 10%;
       }
-      #es-rc-content.es-rc .es-possibilities__text {
-        padding: 15px;
-        font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
-        font-weight: 400;
+      #es-rc-content.es-rc .es-recipes__day-night-label--first {
+        top: 10%;
+        left: 44%;
       }
-      #es-rc-content.es-rc .es-possibilities__packshot {
-        margin: 0 auto;
-        display: block;
-        max-width: 100%;
-        max-width: 60%;
-        padding-left: 45px;
-      }
-      #es-rc-content.es-rc .es-photo__img {
-        max-width: 90%;
-        display: block;
-        margin: 0 auto;
-        padding: 5px 5px;
-      }
-      #es-rc-content.es-rc .es-photo__img {
-        margin-left: -1%;
-      }
-      #es-rc-content.es-rc .es-photo__img--syrups {
-        margin: 0 auto;
-      }
-      #es-rc-content.es-rc .es-triple__title {
-        position: relative;
-        margin: 0;
-        padding: 0;
-        font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        padding: 15px 15px 0;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 36px;
-        font-weight: 700;
-      }
-      #es-rc-content.es-rc .es-triple__text {
-        margin: 0;
-        padding: 0;
-        line-height: inherit;
-        color: inherit;
-        font-family: inherit;
-        font-weight: inherit;
-        margin: 0 auto;
-        width: 80%;
-        font-size: 19px;
-        font-family: empik, "HurmeGeometricSans3-Light", "Roboto", sans-serif;
-        text-align: center;
-        padding: 0 15px 30px;
+      #es-rc-content.es-rc .es-recipes__day-night-label--second {
+        top: 3%;
+        left: 0%;
       }
       #es-rc-content.es-rc .es-triple__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
-      }
-      #es-rc-content.es-rc .es-triple__mobile-container {
-        position: relative;
-      }
-      #es-rc-content.es-rc .es-triple__single {
-        height: 100%;
-        position: relative;
-      }
-      #es-rc-content.es-rc .es-triple__desc {
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        top: 25px;
-        left: 0;
-        font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        color: #ffffff;
-        font-size: 35px;
-        text-align: center;
-        padding-top: 20px;
-      }
-      #es-rc-content.es-rc .es-triple__desc--first {
-        top: 20%;
-        left: 24%;
-      }
-      #es-rc-content.es-rc .es-triple__desc--second {
-        top: 32%;
-        left: 41%;
-      }
-      #es-rc-content.es-rc .es-triple__desc--third {
-        top: 21%;
-        left: 16%;
+        flex-wrap: nowrap;
       }
       #es-rc-content.es-rc .es-triple__desc-mobile--first, #es-rc-content.es-rc .es-triple__desc-mobile--second, #es-rc-content.es-rc .es-triple__desc-mobile--third {
-        position: absolute;
-        top: 25px;
-        left: 0;
-        font-family: empik, "HurmeGeometricSans3-Black", "Roboto", sans-serif;
-        font-weight: 800;
-        color: #ffffff;
-        font-size: 45px;
-        text-align: center;
+        font-size: 70px;
       }
       #es-rc-content.es-rc .es-triple__desc-mobile--first {
         top: 12%;
@@ -332,76 +627,51 @@
         top: 61%;
         left: 16%;
       }
-      #es-rc-content.es-rc .es-triple__desktop-container {
-        display: none;
+      #es-rc-content.es-rc .es-video {
+        margin-top: -50px;
       }
-      #es-rc-content.es-rc .es-triple__img {
-        max-width: 100%;
-        display: block;
+      #es-rc-content.es-rc .es-video__img {
+        max-width: 300px;
+      }
+      #es-rc-content.es-rc .es-video__text {
+        max-width: 80%;
         margin: 0 auto;
-        min-width: 250px;
-      }
-      #es-rc-content.es-rc .es-recipes__day-night-title {
-        margin-bottom: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: 18px;
-      }
-      #es-rc-content.es-rc .es-recipes__day-night-description {
-        padding-left: 10px;
-        padding-right: 10px;
         margin-bottom: 30px;
-        font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: 16px;
+      }
+      #es-rc-content.es-rc .es-possibilities__title-container {
+        top: -25px;
+      }
+      #es-rc-content.es-rc .es-lemonade__image-group-text {
+        top: 45%;
+        left: 20%;
+        font-size: 35px;
+      }
+    }
+    @media screen and (min-width: 1250px) {
+      #es-rc-content.es-rc .es-title {
+                font-size: 35px;
+      }
+      #es-rc-content.es-rc .es-video__subtitle-second {
+        font-size: 25px;
+      }
+      #es-rc-content.es-rc .es-photo__text {
+        font-size: 25px;
+      }
+      #es-rc-content.es-rc .es-recipes {
+        display: flex;
       }
       #es-rc-content.es-rc .es-recipes__day-night {
-        position: relative;
-        margin-bottom: 50px;
+        max-width: 50%;
       }
       #es-rc-content.es-rc .es-recipes__day-night--second {
-        margin-bottom: 100px;
-      }
-      #es-rc-content.es-rc .es-recipes__day-night-label {
-        position: absolute;
-        margin-top: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: 60px;
-      }
-      #es-rc-content.es-rc .es-recipes__day-night-label--first {
-        color: #ffffff;
-        top: 12%;
-        left: 40%;
+        padding-top: 190px;
       }
       #es-rc-content.es-rc .es-recipes__day-night-label--second {
-        color: #000000;
-        top: -6%;
+        top: 10%;
         left: 0%;
       }
-      #es-rc-content.es-rc .es-recipes__img {
-        margin: 0 auto;
-        display: block;
-        max-width: 100%;
-      }
-      #es-rc-content.es-rc .es-recipes__img--night-desktop {
-        display: none;
-      }
-      #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title {
-        margin-bottom: 20px;
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: 30px;
-      }
-      #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title--small {
-        margin-bottom: 20px;
-        font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: 16px;
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
+        top: 47%;
       }
       #es-rc-content.es-rc .es-recipes__day-night-recipe-content {
         padding-left: 10px;
@@ -409,1177 +679,913 @@
         z-index: 1;
         font-size: 13px;
       }
-      #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
-        background-color: black;
-        color: white;
-        -webkit-clip-path: polygon(0 0%, 100% 14%, 100% 100%, 0 89%);
-                clip-path: polygon(0 0%, 100% 14%, 100% 100%, 0 89%);
-        padding-top: 30%;
-        padding-bottom: 90px;
-        margin-top: -38%;
+      #es-rc-content.es-rc .es-recipes__day-night-label--first {
+        top: 16%;
       }
-      #es-rc-content.es-rc .es-recipes__day-night-recipe-content-ingredients-list {
-        padding-left: 32px;
-        max-width: 90%;
+      #es-rc-content.es-rc .es-possibilities {
+        margin: 30px 0 0;
+        padding-top: 75px;
       }
-      #es-rc-content.es-rc .es-recipes__day-night-recipe-content-ingredients-list li {
-        margin-bottom: 10px;
+      #es-rc-content.es-rc .es-possibilities__title-container {
+        top: 10px;
       }
-      #es-rc-content.es-rc .es-lemonade__title {
-        margin-bottom: 10px;
-      }
-      #es-rc-content.es-rc .es-lemonade__title-group {
-        position: relative;
-      }
-      #es-rc-content.es-rc .es-lemonade__title-image {
-        margin: 0 auto;
-        display: block;
-        max-width: 100%;
-        max-width: 50%;
-        margin-left: 5%;
-      }
-      #es-rc-content.es-rc .es-lemonade__title-pepper {
-        margin: 0 auto;
-        display: block;
-        max-width: 100%;
-        position: absolute;
-        max-width: 23%;
-        top: -156%;
-        right: -1%;
-      }
-      #es-rc-content.es-rc .es-lemonade__subtitle {
-        margin-bottom: 10px;
-        padding-left: 10px;
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        text-align: left;
-        font-size: 18px;
-      }
-      #es-rc-content.es-rc .es-lemonade__subtitle--big {
-        padding-left: 20px;
-        font-size: 19px;
-      }
-      #es-rc-content.es-rc .es-lemonade__image {
-        margin: 0 auto;
-        display: block;
-        max-width: 100%;
-      }
-      #es-rc-content.es-rc .es-lemonade__image--bottle {
-        max-width: 60%;
-        padding-left: 45px;
-        margin-bottom: 30px;
-      }
-      #es-rc-content.es-rc .es-lemonade__content {
-        padding-top: 30px;
-        margin-bottom: 50px;
-      }
-      #es-rc-content.es-rc .es-lemonade__text {
-        font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
-        font-weight: 400;
-        margin-bottom: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-      #es-rc-content.es-rc .es-lemonade__group {
-        max-width: 400px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-      #es-rc-content.es-rc .es-lemonade__group-list {
-        max-width: 400px;
-      }
-      #es-rc-content.es-rc .es-lemonade__group-title {
-        max-width: 400px;
-        margin-bottom: 10px;
-      }
-      #es-rc-content.es-rc .es-lemonade__group-list-item {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 30px;
-        margin-bottom: 30px;
-      }
-      #es-rc-content.es-rc .es-lemonade__group-list-item-description {
-        max-width: 65%;
-      }
-      #es-rc-content.es-rc .es-lemonade__group-list-item-image {
-        margin: 0 auto;
-        display: block;
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        max-width: 70px;
-      }
-      #es-rc-content.es-rc .es-lemonade__bold {
-        font-family: empik, "HurmeGeometricSans3-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-      }
-      #es-rc-content.es-rc .es-lemonade__image-group {
-        position: relative;
-      }
-      #es-rc-content.es-rc .es-lemonade__image-group-text {
-        position: absolute;
-        top: 43%;
-        left: 16%;
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
+      #es-rc-content.es-rc .es-possibilities__title {
         font-size: 25px;
       }
-      #es-rc-content.es-rc .es-video {
-        margin: 0 auto 34px;
-        width: 95%;
-        position: relative;
+      #es-rc-content.es-rc .es-possibilities__left, #es-rc-content.es-rc .es-possibilities__right {
+        min-width: 50%;
       }
-      #es-rc-content.es-rc .es-video__title {
-        margin: 0;
-        padding: 0;
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 20px;
+      #es-rc-content.es-rc .es-possibilities__right {
+        margin-left: -50px;
       }
-      #es-rc-content.es-rc .es-video__subtitle {
-        margin: 0;
-        padding: 0;
-        font-family: empik, "Gazpacho-Regular";
-        font-weight: 400;
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 18px;
+      #es-rc-content.es-rc .es-possibilities__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 30px;
+        padding-right: 30px;
       }
-      #es-rc-content.es-rc .es-video__subtitle-second {
-        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-        font-weight: 700;
-        font-size: 23px;
+      #es-rc-content.es-rc .es-possibilities__title {
+        font-size: 25px;
       }
-      #es-rc-content.es-rc .es-video__text {
-        font-family: empik, "HurmeGeometricSans3-Regular", "Roboto", sans-serif;
-        font-weight: 400;
-        text-align: center;
-        max-width: 100%;
-        margin-bottom: 20px;
+      #es-rc-content.es-rc .es-possibilities__title--first, #es-rc-content.es-rc .es-possibilities__title--second {
+        font-size: 35px;
       }
-      #es-rc-content.es-rc .es-video__container {
-        margin: 0 auto;
-        width: 100%;
-        position: relative;
-        padding-bottom: 46.25%;
-        height: 0;
-      }
-      #es-rc-content.es-rc .es-video__iframe {
-        border: 0;
-        position: absolute;
-        top: 0;
+      #es-rc-content.es-rc .es-possibilities__title--second {
         left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        max-height: 540px;
       }
-      #es-rc-content.es-rc .es-video__img {
+      #es-rc-content.es-rc .es-possibilities__packshot {
+        padding-left: 0;
+      }
+      #es-rc-content.es-rc .es-info__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #es-rc-content.es-rc .es-info__left, #es-rc-content.es-rc .es-info__right {
+        max-width: 50%;
+      }
+      #es-rc-content.es-rc .es-lemonade {
+        margin-top: -100px;
+      }
+      #es-rc-content.es-rc .es-lemonade__subtitle {
+        font-size: 26px;
+      }
+      #es-rc-content.es-rc .es-lemonade__image {
+        max-width: 50%;
+      }
+      #es-rc-content.es-rc .es-lemonade__image--bottle {
+        max-width: 35%;
+      }
+      #es-rc-content.es-rc .es-lemonade__image--coctail {
+        max-width: 100%;
+      }
+    }
+    @media screen and (min-width: 1250px) {
+      #es-rc-content.es-rc .es-triple__desc-mobile--first, #es-rc-content.es-rc .es-triple__desc-mobile--second, #es-rc-content.es-rc .es-triple__desc-mobile--third {
+        font-size: 90px;
+      }
+      #es-rc-content.es-rc .es-triple__desc-mobile--first {
+        top: 12%;
+        left: 26%;
+      }
+      #es-rc-content.es-rc .es-triple__desc-mobile--second {
+        top: 43%;
+        left: 40%;
+      }
+      #es-rc-content.es-rc .es-triple__desc-mobile--third {
+        top: 63%;
+        left: 18%;
+      }
+      #es-rc-content.es-rc .es-lemonade__title-pepper {
+        top: -120%;
+      }
+    }
+    @media screen and (min-width: 1250px) {
+      #es-rc-content.es-rc .es-kv {
+        background: url("./images/kv-bg.png") no-repeat center center;
+        background-size: cover;
+        min-height: 800px;
+        padding-bottom: 300px;
+      }
+      #es-rc-content.es-rc .es-kv__packshot {
+        display: none;
+      }
+      #es-rc-content.es-rc .es-kv__title {
+        font-size: 35px;
+      }
+      #es-rc-content.es-rc .es-kv__title--left {
+        display: block;
+        text-align: left;
+      }
+      #es-rc-content.es-rc .es-kv__title--small {
+        text-align: left;
+      }
+      #es-rc-content.es-rc .es-kv__packshot {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        width: 350px;
+      }
+      #es-rc-content.es-rc .es-kv__packshot--photo {
         max-width: 100%;
         display: block;
         margin: 0 auto;
-        max-width: 200px;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+      }
+      #es-rc-content.es-rc .es-kv__title-group {
+        position: absolute;
+        max-width: 455px;
+        left: 10%;
+        top: -3%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #es-rc-content.es-rc .es-kv__text {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 67%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 17px;
+      }
+      #es-rc-content.es-rc .es-triple__title {
+        font-size: 45px;
+      }
+      #es-rc-content.es-rc .es-info__titleBig {
+        font-size: 45px;
+      }
+      #es-rc-content.es-rc .es-info__title--large {
+        font-size: 42px;
+        margin-right: 50px;
+      }
+      #es-rc-content.es-rc .es-recipes {
+        margin-top: 70px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night--first {
+        margin-top: -75px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night--second {
+        padding-top: 0px;
+        margin-top: -32px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title {
+        margin-bottom: 20px;
+        font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 35px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title--small {
+        font-size: 16px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-label {
+        font-size: 80px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-label--first {
+        top: 10%;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-label--second {
+        top: -3%;
+        left: 0%;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content {
+        font-size: 18px;
+      }
+      #es-rc-content.es-rc .es-lemonade__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 30px;
+      }
+      #es-rc-content.es-rc .es-lemonade__content--1 {
+        align-items: flex-start;
+      }
+      #es-rc-content.es-rc .es-lemonade__content--2 {
+        margin-top: -150px;
+      }
+      #es-rc-content.es-rc .es-lemonade__content--3 {
+        margin-top: -125px;
+      }
+      #es-rc-content.es-rc .es-lemonade__image--grapefruit {
+        margin-top: 50px;
+      }
+      #es-rc-content.es-rc .es-lemonade__image--coctail {
+        max-width: 100%;
+      }
+      #es-rc-content.es-rc .es-lemonade__texts {
+        max-width: 50%;
+        padding-left: 2%;
+      }
+      #es-rc-content.es-rc .es-lemonade__text {
+        max-width: 46%;
+      }
+      #es-rc-content.es-rc .es-lemonade__text--second {
+        max-width: 63%;
+      }
+      #es-rc-content.es-rc .es-lemonade__text--third {
+        max-width: 76%;
+      }
+      #es-rc-content.es-rc .es-lemonade__title {
+        font-size: 70px;
+      }
+      #es-rc-content.es-rc .es-lemonade__subtitle {
+        font-size: 30px;
+      }
+      #es-rc-content.es-rc .es-lemonade__subtitle--big {
+        font-size: 40px;
+      }
+    }
+    @media screen and (min-width: 1250px) {
+      #es-rc-content.es-rc .es-recipes__img--night-desktop {
+        display: block !important; 
+      }
+      #es-rc-content.es-rc .es-recipes__img--night-mobile {
+        display: none;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
+        position: absolute;
+        top: 48%;
+        left: 0;
+        z-index: 1;
+        color: #ffffff;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
+        background-color: transparent;
+        padding-top: 0;
+        -webkit-clip-path: none;
+                clip-path: none;
+      }
+    }
+    @media screen and (min-width: 1250px) {
+      #es-rc-content.es-rc .es-kv__title {
+        padding: 15px;
+        padding-top: 0;
+        font-size: 40px;
+      }
+      #es-rc-content.es-rc .es-kv__title--small {
+        padding-left: 15px;
+        font-size: 18px;
+      }
+      #es-rc-content.es-rc .es-kv__img {
+        max-width: 46%;
+      }
+      #es-rc-content.es-rc .es-kv__title-group {
+        left: 10%;
+        top: -1%;
+      }
+      #es-rc-content.es-rc .es-kv__packshot {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        width: 450px;
+      }
+      #es-rc-content.es-rc .es-kv__packshot--photo {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+      }
+      #es-rc-content.es-rc .es-possibilities {
+        margin-top: -80px;
+      }
+      #es-rc-content.es-rc .es-possibilities__title-container {
+        top: 43px;
+      }
+      #es-rc-content.es-rc .es-possibilities__right {
+        margin-left: -90px;
+        margin-top: 100px;
+      }
+      #es-rc-content.es-rc .es-possibilities__title {
+        font-size: 36px;
+      }
+      #es-rc-content.es-rc .es-possibilities__title--first, #es-rc-content.es-rc .es-possibilities__title--second {
+        font-size: 45px;
+      }
+      #es-rc-content.es-rc .es-possibilities__title--second {
+        top: 44%;
+      }
+      #es-rc-content.es-rc .es-possibilities .es-possibilities__content {
+        margin-top: -105px;
+      }
+      #es-rc-content.es-rc .es-possibilities .es-possibilities__packshot {
+        width: 195px;
+        margin-top: -120px;
+      }
+      #es-rc-content.es-rc .es-possibilities .es-possibilities__text {
+        font-size: 18px;
+        width: 91%;
+        line-height: 1.25;
+      }
+      #es-rc-content.es-rc .es-possibilities__img {
+        margin-top: -150px;
+      }
+      #es-rc-content.es-rc .es-info__title {
+        line-height: 1;
+      }
+      #es-rc-content.es-rc .es-info__text {
+        width: 392px;
+        font-size: 18px;
+      }
+      #es-rc-content.es-rc .es-video__text {
+      font-size: 18px;
+        max-width: 95%;
+      }
+      #es-rc-content.es-rc .es-video__text--second {
+        max-width: 95%;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-title {
+        font-size: 19px;
+        margin-bottom: 30px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-description {
+        font-size: 19px;
+        margin-top: -100px;
+        margin-bottom: 80px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-group {
+        max-width: 475px;
+        margin-left: 3%;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content {
+        padding-left: 20px;
+        padding-right: 25px;
+        font-size: 18px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-label--first {
+        top: 11.4%;
+        left: 40%;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-label--second {
+        top: -2.1%;
+        left: 3.4%;
+      }
+      #es-rc-content.es-rc .es-lemonade__title-pepper {
+        max-width: 26%;
+        top: -65%;
+        right: 3%;
+      }
+      #es-rc-content.es-rc .es-lemonade__title-image {
+        max-width: 45%;
+      }
+      #es-rc-content.es-rc .es-lemonade__image {
+        max-width: 50%;
+      }
+      #es-rc-content.es-rc .es-lemonade__image--grapefruit {
+        margin-top: -50px;
+      }
+      #es-rc-content.es-rc .es-lemonade__image--bottle {
+        max-width: 23%;
+        margin-left: 14%;
+        padding-left: 0;
+      }
+      #es-rc-content.es-rc .es-lemonade__image--coctail {
+        max-width: 100%;
+      }
+      #es-rc-content.es-rc .es-lemonade__image-group-text {
+        left: 23%;
+      }
+      #es-rc-content.es-rc .es-lemonade__text {
+        font-size: 19px;
+      }
+      #es-rc-content.es-rc .es-lemonade__text--first {
+        max-width: 50%;
+      }
+      #es-rc-content.es-rc .es-lemonade__text--third {
+        max-width: 82%;
+        margin-bottom: 35px;
+      }
+      #es-rc-content.es-rc .es-lemonade__group-title {
+        margin-bottom: 20px;
+        font-size: 19px;
+      }
+      #es-rc-content.es-rc .es-lemonade__group-list-item-description {
+        font-size: 16px;
+      }
+      #es-rc-content.es-rc .es-lemonade__group {
+        max-width: 500px;
+      }
+      #es-rc-content.es-rc .es-lemonade__group-title {
+        max-width: 500px;
+      }
+      #es-rc-content.es-rc .es-lemonade__group-list {
+        max-width: 500px;
+      }
+      #es-rc-content.es-rc .es-lemonade__texts {
+        margin-top: -100px;
+        padding-left: 0;
+      }
+      #es-rc-content.es-rc .es-video__subtitle-second {
+        font-size: 36px;
       }
       #es-rc-content.es-rc .es-photo__text {
-        font-size: 23px;
+        font-size: 36px;
       }
-      @media screen and (min-width: 400px) {
-        #es-rc-content.es-rc .es-possibilities__title-container {
-          top: -45px;
-        }
+      #es-rc-content.es-rc .es-photo__img {
+        max-width: 104%;
+        margin-left: -4%;
       }
-      @media screen and (min-width: 500px) {
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content {
-          font-size: 16px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night {
-          margin-bottom: 100px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-group {
-          max-width: 395px;
-          margin: 0 auto;
-          margin-left: 10%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--first {
-          top: 10%;
-          left: 44%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--second {
-          top: 3%;
-          left: 0%;
-        }
-        #es-rc-content.es-rc .es-triple__wrapper {
-          flex-wrap: nowrap;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--first, #es-rc-content.es-rc .es-triple__desc-mobile--second, #es-rc-content.es-rc .es-triple__desc-mobile--third {
-          font-size: 70px;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--first {
-          top: 12%;
-          left: 23%;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--second {
-          top: 41%;
-          left: 37%;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--third {
-          top: 61%;
-          left: 16%;
-        }
-        #es-rc-content.es-rc .es-video {
-          margin-top: -50px;
-        }
-        #es-rc-content.es-rc .es-video__img {
-          max-width: 300px;
-        }
-        #es-rc-content.es-rc .es-video__text {
-          max-width: 80%;
-          margin: 0 auto;
-          margin-bottom: 30px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title-container {
-          top: -25px;
-        }
-        #es-rc-content.es-rc .es-lemonade__image-group-text {
-          top: 45%;
-          left: 20%;
-          font-size: 35px;
-        }
+      #es-rc-content.es-rc .es-photo__img--syrups {
+        max-width: 90%;
+        margin: 0 auto;
       }
-      @media screen and (min-width: 1250px) {
-        #es-rc-content.es-rc .es-title {
-                  font-size: 35px;
-        }
-        #es-rc-content.es-rc .es-video__subtitle-second {
-          font-size: 25px;
-        }
-        #es-rc-content.es-rc .es-photo__text {
-          font-size: 25px;
-        }
-        #es-rc-content.es-rc .es-recipes {
-          display: flex;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night {
-          max-width: 50%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night--second {
-          padding-top: 190px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--second {
-          top: 10%;
-          left: 0%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
-          top: 47%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content {
-          padding-left: 10px;
-          padding-right: 10px;
-          z-index: 1;
-          font-size: 13px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--first {
-          top: 16%;
-        }
-        #es-rc-content.es-rc .es-possibilities {
-          margin: 30px 0 0;
-          padding-top: 75px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title-container {
-          top: 10px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title {
-          font-size: 25px;
-        }
-        #es-rc-content.es-rc .es-possibilities__left, #es-rc-content.es-rc .es-possibilities__right {
-          min-width: 50%;
-        }
-        #es-rc-content.es-rc .es-possibilities__right {
-          margin-left: -50px;
-        }
-        #es-rc-content.es-rc .es-possibilities__content {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding-left: 30px;
-          padding-right: 30px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title {
-          font-size: 25px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title--first, #es-rc-content.es-rc .es-possibilities__title--second {
-          font-size: 35px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title--second {
-          left: 0;
-        }
-        #es-rc-content.es-rc .es-possibilities__packshot {
-          padding-left: 0;
-        }
-        #es-rc-content.es-rc .es-info__container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        #es-rc-content.es-rc .es-info__left, #es-rc-content.es-rc .es-info__right {
-          max-width: 50%;
-        }
-        #es-rc-content.es-rc .es-lemonade {
-          margin-top: -100px;
-        }
-        #es-rc-content.es-rc .es-lemonade__subtitle {
-          font-size: 26px;
-        }
-        #es-rc-content.es-rc .es-lemonade__image {
-          max-width: 50%;
-        }
-        #es-rc-content.es-rc .es-lemonade__image--bottle {
-          max-width: 35%;
-        }
-        #es-rc-content.es-rc .es-lemonade__image--coctail {
-          max-width: 100%;
-        }
+      #es-rc-content.es-rc .es-triple {
+        margin-top: -100px;
       }
-      @media screen and (min-width: 1250px) {
-        #es-rc-content.es-rc .es-triple__desc-mobile--first, #es-rc-content.es-rc .es-triple__desc-mobile--second, #es-rc-content.es-rc .es-triple__desc-mobile--third {
-          font-size: 90px;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--first {
-          top: 12%;
-          left: 26%;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--second {
-          top: 43%;
-          left: 40%;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--third {
-          top: 63%;
-          left: 18%;
-        }
-        #es-rc-content.es-rc .es-lemonade__title-pepper {
-          top: -120%;
-        }
+      #es-rc-content.es-rc .es-triple__desc-mobile--first, #es-rc-content.es-rc .es-triple__desc-mobile--second, #es-rc-content.es-rc .es-triple__desc-mobile--third {
+        font-size: 160px;
       }
-      @media screen and (min-width: 1250px) {
-        #es-rc-content.es-rc .es-kv {
-          background: url("./images/kv-bg.png") no-repeat center center;
-          background-size: cover;
-          min-height: 800px;
-          padding-bottom: 300px;
-        }
-        #es-rc-content.es-rc .es-kv__packshot {
-          display: none;
-        }
-        #es-rc-content.es-rc .es-kv__title {
-          font-size: 35px;
-        }
-        #es-rc-content.es-rc .es-kv__title--left {
-          display: block;
-          text-align: left;
-        }
-        #es-rc-content.es-rc .es-kv__title--small {
-          text-align: left;
-        }
-        #es-rc-content.es-rc .es-kv__packshot {
-          position: absolute;
-          right: 0;
-          top: 30px;
-          width: 350px;
-        }
-        #es-rc-content.es-rc .es-kv__packshot--photo {
-          max-width: 100%;
-          display: block;
-          margin: 0 auto;
-          padding: 0;
-          position: relative;
-          z-index: 1;
-        }
-        #es-rc-content.es-rc .es-kv__title-group {
-          position: absolute;
-          max-width: 455px;
-          left: 10%;
-          top: -3%;
-          margin: 0 auto;
-          text-align: center;
-        }
-        #es-rc-content.es-rc .es-kv__text {
-          padding-top: 30px;
-          padding-bottom: 30px;
-          width: 67%;
-          margin: 0 auto;
-          text-align: center;
-          font-size: 17px;
-        }
-        #es-rc-content.es-rc .es-triple__title {
-          font-size: 45px;
-        }
-        #es-rc-content.es-rc .es-info__titleBig {
-          font-size: 45px;
-        }
-        #es-rc-content.es-rc .es-info__title--large {
-          font-size: 42px;
-          margin-right: 50px;
-        }
-        #es-rc-content.es-rc .es-recipes {
-          margin-top: 70px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night--first {
-          margin-top: -75px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night--second {
-          padding-top: 0px;
-          margin-top: -32px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title {
-          margin-bottom: 20px;
-          font-family: empik, "Gazpacho-Bold", "Roboto", sans-serif;
-          font-weight: 700;
-          font-size: 35px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title--small {
-          font-size: 16px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label {
-          font-size: 80px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--first {
-          top: 10%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--second {
-          top: -3%;
-          left: 0%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content {
-          font-size: 18px;
-        }
-        #es-rc-content.es-rc .es-lemonade__content {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding-left: 30px;
-        }
-        #es-rc-content.es-rc .es-lemonade__content--1 {
-          align-items: flex-start;
-        }
-        #es-rc-content.es-rc .es-lemonade__content--2 {
-          margin-top: -150px;
-        }
-        #es-rc-content.es-rc .es-lemonade__content--3 {
-          margin-top: -125px;
-        }
-        #es-rc-content.es-rc .es-lemonade__image--grapefruit {
-          margin-top: 50px;
-        }
-        #es-rc-content.es-rc .es-lemonade__image--coctail {
-          max-width: 100%;
-        }
-        #es-rc-content.es-rc .es-lemonade__texts {
-          max-width: 50%;
-          padding-left: 2%;
-        }
-        #es-rc-content.es-rc .es-lemonade__text {
-          max-width: 46%;
-        }
-        #es-rc-content.es-rc .es-lemonade__text--second {
-          max-width: 63%;
-        }
-        #es-rc-content.es-rc .es-lemonade__text--third {
-          max-width: 76%;
-        }
-        #es-rc-content.es-rc .es-lemonade__title {
-          font-size: 70px;
-        }
-        #es-rc-content.es-rc .es-lemonade__subtitle {
-          font-size: 30px;
-        }
-        #es-rc-content.es-rc .es-lemonade__subtitle--big {
-          font-size: 40px;
-        }
+      #es-rc-content.es-rc .es-triple__desc-mobile--first {
+        top: 11%;
+        left: 14%;
       }
-      @media screen and (min-width: 1250px) {
-        #es-rc-content.es-rc .es-recipes__img--night-desktop {
-          display: block;
-        }
-        #es-rc-content.es-rc .es-recipes__img--night-mobile {
-          display: none;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
-          position: absolute;
-          top: 48%;
-          left: 0;
-          z-index: 1;
-          color: #ffffff;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
-          background-color: transparent;
-          padding-top: 0;
-          -webkit-clip-path: none;
-                  clip-path: none;
-        }
+      #es-rc-content.es-rc .es-triple__desc-mobile--second {
+        top: 42%;
+        left: 42%;
       }
-      @media screen and (min-width: 1250px) {
-        #es-rc-content.es-rc .es-kv__title {
-          padding: 15px;
-          padding-top: 0;
-          font-size: 40px;
-        }
-        #es-rc-content.es-rc .es-kv__title--small {
-          padding-left: 15px;
-          font-size: 18px;
-        }
-        #es-rc-content.es-rc .es-kv__img {
-          max-width: 46%;
-        }
-        #es-rc-content.es-rc .es-kv__title-group {
-          left: 10%;
-          top: -1%;
-        }
-        #es-rc-content.es-rc .es-kv__packshot {
-          position: absolute;
-          right: 0;
-          top: 30px;
-          width: 450px;
-        }
-        #es-rc-content.es-rc .es-kv__packshot--photo {
-          max-width: 100%;
-          display: block;
-          margin: 0 auto;
-          padding: 0;
-          position: relative;
-          z-index: 1;
-        }
-        #es-rc-content.es-rc .es-possibilities {
-          margin-top: -100px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title-container {
-          top: 43px;
-        }
-        #es-rc-content.es-rc .es-possibilities__right {
-          margin-left: -90px;
-          margin-top: 100px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title {
-          font-size: 36px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title--first, #es-rc-content.es-rc .es-possibilities__title--second {
-          font-size: 45px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title--second {
-          top: 44%;
-        }
-        #es-rc-content.es-rc .es-possibilities .es-possibilities__content {
-          margin-top: -150px;
-        }
-        #es-rc-content.es-rc .es-possibilities .es-possibilities__packshot {
-          width: 180px;
-          margin-top: -120px;
-        }
-        #es-rc-content.es-rc .es-possibilities .es-possibilities__text {
-          font-size: 16px;
-          width: 81%;
-          line-height: 1.25;
-        }
-        #es-rc-content.es-rc .es-possibilities__img {
-          margin-top: -150px;
-        }
-        #es-rc-content.es-rc .es-info__title {
-          line-height: 1;
-        }
-        #es-rc-content.es-rc .es-info__text {
-          width: 392px;
-          font-size: 18px;
-        }
-        #es-rc-content.es-rc .es-video__text {
+      #es-rc-content.es-rc .es-triple__desc-mobile--third {
+        top: 61%;
+        left: 5%;
+      }
+    }
+    @media screen and (min-width: 1250px) {
+      #es-rc-content.es-rc .es-kv {
+        height: 100%;
+        min-height: 700px;
+      }
+      #es-rc-content.es-rc .es-kv__title-group {
+        max-width: 440px;
+        left: 2%;
+        top: -2%;
+      }
+      #es-rc-content.es-rc .es-kv__title {
+        font-size: 55px;
+      }
+      #es-rc-content.es-rc .es-kv__subtitle {
+        font-size: 17px;
+      }
+      #es-rc-content.es-rc .es-kv__text {
+        width: 92%;
         font-size: 18px;
-          max-width: 95%;
-        }
-        #es-rc-content.es-rc .es-video__text--second {
-          max-width: 95%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-title {
-          font-size: 19px;
-          margin-bottom: 30px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-description {
-          font-size: 19px;
-          margin-top: -100px;
-          margin-bottom: 80px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-group {
-          max-width: 475px;
-          margin-left: 3%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content {
-          padding-left: 20px;
-          padding-right: 25px;
-          font-size: 18px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--first {
-          top: 11.4%;
-          left: 40%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--second {
-          top: -2.1%;
-          left: 3.4%;
-        }
-        #es-rc-content.es-rc .es-lemonade__title-pepper {
-          max-width: 26%;
-          top: -65%;
-          right: 3%;
-        }
-        #es-rc-content.es-rc .es-lemonade__title-image {
-          max-width: 45%;
-        }
-        #es-rc-content.es-rc .es-lemonade__image {
-          max-width: 50%;
-        }
-        #es-rc-content.es-rc .es-lemonade__image--grapefruit {
-          margin-top: -50px;
-        }
-        #es-rc-content.es-rc .es-lemonade__image--bottle {
-          max-width: 23%;
-          margin-left: 14%;
-          padding-left: 0;
-        }
-        #es-rc-content.es-rc .es-lemonade__image--coctail {
-          max-width: 100%;
-        }
-        #es-rc-content.es-rc .es-lemonade__image-group-text {
-          left: 23%;
-        }
-        #es-rc-content.es-rc .es-lemonade__text {
-          font-size: 19px;
-        }
-        #es-rc-content.es-rc .es-lemonade__text--first {
-          max-width: 50%;
-        }
-        #es-rc-content.es-rc .es-lemonade__text--third {
-          max-width: 82%;
-          margin-bottom: 35px;
-        }
-        #es-rc-content.es-rc .es-lemonade__group-title {
-          margin-bottom: 20px;
-          font-size: 19px;
-        }
-        #es-rc-content.es-rc .es-lemonade__group-list-item-description {
-          font-size: 16px;
-        }
-        #es-rc-content.es-rc .es-lemonade__group {
-          max-width: 500px;
-        }
-        #es-rc-content.es-rc .es-lemonade__group-title {
-          max-width: 500px;
-        }
-        #es-rc-content.es-rc .es-lemonade__group-list {
-          max-width: 500px;
-        }
-        #es-rc-content.es-rc .es-lemonade__texts {
-          margin-top: -100px;
-          padding-left: 0;
-        }
-        #es-rc-content.es-rc .es-video__subtitle-second {
-          font-size: 36px;
-        }
-        #es-rc-content.es-rc .es-photo__text {
-          font-size: 36px;
-        }
-        #es-rc-content.es-rc .es-photo__img {
-          max-width: 104%;
-          margin-left: -4%;
-        }
-        #es-rc-content.es-rc .es-photo__img--syrups {
-          max-width: 90%;
-          margin: 0 auto;
-        }
-        #es-rc-content.es-rc .es-triple {
-          margin-top: -100px;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--first, #es-rc-content.es-rc .es-triple__desc-mobile--second, #es-rc-content.es-rc .es-triple__desc-mobile--third {
-          font-size: 160px;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--first {
-          top: 11%;
-          left: 14%;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--second {
-          top: 42%;
-          left: 42%;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--third {
-          top: 61%;
-          left: 5%;
-        }
+        line-height: 1.35;
       }
-      @media screen and (min-width: 1250px) {
-        #es-rc-content.es-rc .es-kv {
-          height: 100%;
-          min-height: 700px;
-        }
-        #es-rc-content.es-rc .es-kv__title-group {
-          max-width: 440px;
-          left: 2%;
-          top: -2%;
-        }
-        #es-rc-content.es-rc .es-kv__title {
-          font-size: 55px;
-        }
-        #es-rc-content.es-rc .es-kv__subtitle {
-          font-size: 17px;
-        }
-        #es-rc-content.es-rc .es-kv__text {
-          width: 92%;
-          font-size: 18px;
-          line-height: 1.35;
-        }
-        #es-rc-content.es-rc .es-title {
-          font-size: 35px;
-        }
-        #es-rc-content.es-rc .es-video__subtitle-second {
-          font-size: 25px;
-        }
-        #es-rc-content.es-rc .es-photo__text {
-          margin-top: 10px;
-          font-size: 25px;
-        }
-        #es-rc-content.es-rc .es-video__subtitle {
-          font-size: 30px;
-        }
-        #es-rc-content.es-rc .es-lemonade__title {
-          font-size: 70px;
-        }
-        #es-rc-content.es-rc .es-lemonade__title-pepper {
-          max-width: 26%;
-          top: -47%;
-          right: 2%;
-        }
-        #es-rc-content.es-rc .es-info__title {
-          font-size: 35px;
-        }
-        #es-rc-content.es-rc .es-info__title--large {
-          font-size: 57px;
-          margin-right: -27px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title {
-          font-size: 40px;
-          top: -25px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title--first {
-          margin-top: -10px;
-        }
-        #es-rc-content.es-rc .es-possibilities__title--small {
-          max-width: 700px;
-          font-size: 36px;
-        }
-        #es-rc-content.es-rc .es-possibilities__subtitle {
-          margin-top: 35px;
-          margin-left: auto;
-          margin-right: -55px;
-          max-width: 500px;
-          font-size: 35px;
-          text-align: center;
-        }
-        #es-rc-content.es-rc .es-possibilities__title-container {
-          top: 20px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
-          position: absolute;
-          top: 49%;
-          font-size: 18px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label {
-          font-size: 100px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--first {
-          top: 6.4%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-label--second {
-          top: -2.1%;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title {
-          font-size: 48px;
-        }
-        #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title--small {
-          font-size: 18px;
-        }
-        #es-rc-content.es-rc .es-lemonade {
-          margin-top: -65px;
-        }
-        #es-rc-content.es-rc .es-lemonade__title {
-          margin-left: -181px;
-        }
-        #es-rc-content.es-rc .es-lemonade__title--second {
-          margin-left: 240px;
-        }
-        #es-rc-content.es-rc .es-lemonade__content--2 {
-          margin-top: -200px;
-        }
-        #es-rc-content.es-rc .es-lemonade__content--3 {
-          margin-top: -120px;
-        }
-        #es-rc-content.es-rc .es-lemonade__text--second {
-          font-size: 18px;
-          max-width: 61%;
-          margin-right: 6%;
-        }
-        #es-rc-content.es-rc .es-lemonade__image--grapefruit {
-          margin-top: -7%;
-          margin-right: 3%;
-        }
-        #es-rc-content.es-rc .es-triple__desc-mobile--first, #es-rc-content.es-rc .es-triple__desc-mobile--second, #es-rc-content.es-rc .es-triple__desc-mobile--third {
-          font-size: 140px;
-        }
+      #es-rc-content.es-rc .es-title {
+        font-size: 35px;
       }
-      @media screen and (min-width: 1400px) {
-        #es-rc-content.es-rc .es-lemonade__title {
-          font-size: 90px;
-        }
-        #es-rc-content.es-rc .es-lemonade__subtitle {
-          padding-left: 25px;
-          font-size: 40px;
-        }
-        #es-rc-content.es-rc .es-lemonade__subtitle--big {
-          padding-left: 50px;
-          font-size: 55px;
-        }
-        #es-rc-content.es-rc .es-lemonade__group-list-item {
-          gap: 12px;
-        }
-        #es-rc-content.es-rc .es-lemonade__image-group-text {
-          left: 16%;
-          font-size: 33px;
-          top: 43%;
-        }
-        #es-rc-content.es-rc .es-video {
-          margin-top: -90px;
-        }
+      #es-rc-content.es-rc .es-video__subtitle-second {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 25px;
       }
+      #es-rc-content.es-rc .es-photo__text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 25px;
+      }
+      #es-rc-content.es-rc .es-video__subtitle {
+        font-size: 30px;
+      }
+      #es-rc-content.es-rc .es-lemonade__title {
+        font-size: 70px;
+      }
+      #es-rc-content.es-rc .es-lemonade__title-pepper {
+        max-width: 26%;
+        top: -47%;
+        right: 2%;
+      }
+      #es-rc-content.es-rc .es-info__title {
+        font-size: 35px;
+      }
+      #es-rc-content.es-rc .es-info__title--large {
+          font-size: 45px;
+          margin-right: -10px;
+      }
+      #es-rc-content.es-rc .es-possibilities__title {
+        font-size: 40px;
+        top: -25px;
+      }
+      #es-rc-content.es-rc .es-possibilities__title--first {
+        margin-top: -10px;
+      }
+      #es-rc-content.es-rc .es-possibilities__title--small {
+        max-width: 700px;
+        font-size: 36px;
+      }
+      #es-rc-content.es-rc .es-possibilities__subtitle {
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: -55px;
+        max-width: 500px;
+        font-size: 35px;
+        text-align: center;
+      }
+      #es-rc-content.es-rc .es-possibilities__title-container {
+        top: 20px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark p {
+        color: white !important;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content--dark {
+        position: absolute;
+        top: 48%;
+        font-size: 18px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-label {
+        font-size: 100px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-label--first {
+        top: 6.4%;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-label--second {
+        top: -2.1%;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title {
+        font-size: 48px;
+      }
+      #es-rc-content.es-rc .es-recipes__day-night-recipe-content-title--small {
+        font-size: 18px;
+      }
+      #es-rc-content.es-rc .es-lemonade {
+        margin-top: -65px;
+      }
+      #es-rc-content.es-rc .es-lemonade__title {
+        margin-left: -181px;
+      }
+      #es-rc-content.es-rc .es-lemonade__title--second {
+        margin-left: 240px;
+      }
+      #es-rc-content.es-rc .es-lemonade__content--2 {
+        margin-top: -200px;
+      }
+      #es-rc-content.es-rc .es-lemonade__content--3 {
+        margin-top: -120px;
+      }
+      #es-rc-content.es-rc .es-lemonade__text--second {
+        font-size: 18px;
+        max-width: 61%;
+        margin-right: 6%;
+      }
+      #es-rc-content.es-rc .es-lemonade__image--grapefruit {
+        margin-top: -7%;
+        margin-right: 3%;
+      }
+      #es-rc-content.es-rc .es-triple__desc-mobile--first, #es-rc-content.es-rc .es-triple__desc-mobile--second, #es-rc-content.es-rc .es-triple__desc-mobile--third {
+        font-size: 140px;
+      }
+    }
+    @media screen and (min-width: 1400px) {
+      #es-rc-content.es-rc .es-lemonade__title {
+        font-size: 90px;
+      }
+      #es-rc-content.es-rc .es-lemonade__subtitle {
+        padding-left: 25px;
+        font-size: 40px;
+      }
+      #es-rc-content.es-rc .es-lemonade__subtitle--big {
+        padding-left: 50px;
+        font-size: 55px;
+      }
+      #es-rc-content.es-rc .es-lemonade__group-list-item {
+        gap: 12px;
+      }
+      #es-rc-content.es-rc .es-lemonade__image-group-text {
+        left: 16%;
+        font-size: 33px;
+        top: 43%;
+      }
+      #es-rc-content.es-rc .es-video {
+        margin-top: -90px;
+      }
+    }
     </style>
   </head>
 
-  <body>
-    <div class="es-rc"
-         id="es-rc-content">
-      <div class="es-kv">
-        <div class="es-kv__packshot">
-          <img class="es-kv__packshot--photo"
-               src="./images/packshot.png"
-               loading="lazy"
-               alt="Sodastream Crafted opakowanie">
-        </div>
-
-        <div class="es-kv__title-group">
-          <div class="es-kv__logo">
-            <img class="es-kv__img"
-                 src="./images/logo.png"
-                 loading="lazy"
-                 alt="logotyp Sodastream">
-          </div>
-          <div class="es-kv__title--small">Baza do koktajli i moktajli o smaku</div>
-          <h2 class="es-kv__title">
-            <span class="es-kv__title--left">Ananas</span> & Jalapeño
-          </h2>
-          <p class="es-kv__subtitle">
-            Unikalne połączenie smaków tropikalnego <br>ananasa
-            i&nbsp;ognistego jalapeño, które rozpali wszystkie&nbsp;zmysły
-          </p>
-        </div>
-      </div>
-
-      <div class="es-info">
-        <p class="es-kv__text">
-          Poznaj nieoczywistą fuzję smaków egzotycznego ananasa i pikantnej papryczki jalapeño,
-          która zaskoczy Twoje kubki smakowe. Oto bezalkoholowa baza do koktajli i moktajli
-          SodaStream Crafted, dzięki której stworzysz napoje pełne charakteru – idealne zarówno
-          na orzeźwiające popołudnie, jak i wieczorne spotkania.
-        </p>
-        <div class="es-info__container">
-          <div class="es-info__left">
-            <img class="es-photo__img"
-                 src="./images/photo.png"
-                 loading="lazy"
-                 alt="Kubek z Sodastream">
-          </div>
-          <div class="es-info__right">
-            <h2 class="es-info__title es-title">
-              Perfekcyjne<br>
-              koktajle i moktajle<br>
-              <span class="es-info__title--large">na 1, 2, tssst!</span>
-            </h2>
-            <p class="es-info__text">
-              Wyczaruj napój idealny na każdą porę
-              dnia i nocy. Z bazą SodaStream Crafted
-              Ananas & Jalapeño stworzysz orzeźwiające
-              moktajle na słoneczne popołudnie
-              i zaskakujące koktajle na wieczorne spotkanie.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="es-possibilities">
-        <div class="es-possibilities__title-container">
-          <div class="es-possibilities__title-group">
-            <h2 class="es-possibilities__title es-possibilities__title--first">
-              Orzeźwiające <br>w dzień
-            </h2>
-          </div>
-
-          <div class="es-possibilities__title-group">
-            <h2 class="es-possibilities__title es-possibilities__title--second">
-              wyrafinowane <br>nocą!
-            </h2>
-          </div>
-        </div>
-        <img class="es-possibilities__img"
-             src="./images/possibilities.png"
+<body>
+  <div class="es-rc"
+       id="es-rc-content">
+    <div class="es-kv">
+      <div class="es-kv__packshot">
+        <img class="es-kv__packshot--photo"
+             src="./images/packshot.png"
              loading="lazy"
-             alt="Sodastream Orzeźwiające w dzień i wyrafinowane nocą">
-        <div class="es-possibilities__content">
-          <div class="es-possibilities__left">
-            <img class="es-possibilities__packshot"
-                 src="./images/possibilities-bottle.png"
-                 loading="lazy"
-                 alt="Butelka Sodastream">
-          </div>
-          <div class="es-possibilities__right">
-            <p class="es-possibilities__text">
-              <b>Orzeźwienie w ciągu dnia</b><br>
-              Sięgnij po pyszne moktajle z tropikalnym
-              ananasem i pikantnym jalapeño. Idealne
-              na&nbsp;spotkania z przyjaciółmi, letnie popołudnia
-              czy chwile relaksu – każda pora to dobry czas
-              na SodaStream Crafted.
-              <br><br>
-              <b>Wieczór pełen smaku</b><br>
-              Gdy zapada zmrok, zamień swoją kuchnię
-              w&nbsp;domowy bar! Dzięki bazom SodaStream Crafted stworzysz wyrafinowane koktajle, które podkreślą
-              wyjątkowy
-              charakter
-              każdej okazji.
-
-            </p>
-            <p class="es-possibilities__subtitle">
-              Poczuj smak<br>
-              w każdym bąbelku!
-            </p>
-          </div>
-        </div>
+             alt="Sodastream Crafted opakowanie">
       </div>
 
-      <div class="es-day-night"></div>
+      <div class="es-kv__title-group">
+        <div class="es-kv__logo">
+          <img class="es-kv__img"
+               src="./images/logo.png"
+               loading="lazy"
+               alt="logotyp Sodastream">
+        </div>
+        <div class="es-kv__title--small">Baza do koktajli i moktajli o smaku</div>
+        <h2 class="es-kv__title">
+          <span class="es-kv__title--left">Ananas</span> & Jalapeño
+        </h2>
+        <p class="es-kv__subtitle">
+          Unikalne połączenie smaków tropikalnego <br>ananasa
+          i&nbsp;ognistego jalapeño, które rozpali wszystkie&nbsp;zmysły
+        </p>
+      </div>
+    </div>
 
-      <div class="es-triple">
-        <div class="es-triple__wrapper">
-          <div class="es-triple__mobile-container">
-            <img class="es-triple__img"
-                 src="./images/triple-mobile.png"
-                 loading="lazy"
-                 alt="Gazuj, Miksuj i Smakuj">
-            <p class="es-triple__desc es-triple__desc-mobile--first">gazuj</p>
-            <p class="es-triple__desc es-triple__desc-mobile--second">miksuj</p>
-            <p class="es-triple__desc es-triple__desc-mobile--third">smakuj</p>
-          </div>
+    <div class="es-info">
+      <p class="es-kv__text">
+        Poznaj nieoczywistą fuzję smaków egzotycznego ananasa i pikantnej papryczki jalapeño,
+        która zaskoczy Twoje kubki smakowe. Oto bezalkoholowa baza do koktajli i moktajli
+        SodaStream Crafted, dzięki której stworzysz napoje pełne charakteru – idealne zarówno
+        na orzeźwiające popołudnie, jak i wieczorne spotkania.
+      </p>
+      <div class="es-info__container">
+        <div class="es-info__left">
+          <img class="es-photo__img"
+               src="./images/photo.png"
+               loading="lazy"
+               alt="Kubek z Sodastream">
+        </div>
+        <div class="es-info__right">
+          <h2 class="es-info__title es-title">
+            Perfekcyjne<br>
+            koktajle i moktajle<br>
+            <span class="es-info__title--large">na 1, 2, tssst!</span>
+          </h2>
+          <p class="es-info__text">
+            Wyczaruj napój idealny na każdą porę
+            dnia i nocy. Z bazą SodaStream Crafted
+            Ananas & Jalapeño stworzysz orzeźwiające
+            moktajle na słoneczne popołudnie
+            i zaskakujące koktajle na wieczorne spotkanie.
+          </p>
         </div>
       </div>
+    </div>
 
-      <div class="es-recipes">
-        <div class="es-recipes__day-night es-recipes__day-night--first">
-          <div class="es-recipes__day-night-group">
-            <p class="es-recipes__day-night-description">
-              <b>Twoja Kuchnia - Twoje Laboratorium Smaku!</b><br>
-              Zamień swoją kuchnię w tętniące życiem laboratorium smaków i odkryj w sobie pasję miksologa. Dodaj
-              gazowaną wodę do bazy
-              SodaStream Crafted, twórz orzeźwiające moktajle oraz wyrafinowane koktajle
-              i&nbsp;bąbelkuj z pasją!
-
-            </p>
-          </div>
-          <p class="es-recipes__day-night-label es-recipes__day-night-label--first">
-            Day
-          </p>
-          <img class="es-recipes__img"
-               src="./images/day.png"
-               loading="lazy"
-               alt="Moktajl Day">
-          <div class="es-recipes__day-night-recipe-content es-recipes__day-night-recipe-content--first">
-            <p class="es-recipes__day-night-recipe-content-title es-recipes__day-night-recipe-content-title--small">
-              Przepis na dzień - Moktajl:
-            </p>
-            <p class="es-recipes__day-night-recipe-content-title">
-              Tropical <br>
-              Pineapple Fizz
-            </p>
-            <p><b>Składniki:</b><br></p>
-            <ul class="es-recipes__day-night-recipe-content-ingredients-list">
-              <li>35 ml bazy Ananas & Jalapeño</li>
-              <li>35 ml bazy Ananas & Jalapeño</li>
-              <li>20 ml soku z limonki</li>
-              <li>45 ml wody gazowanej</li>
-              <li>Kostki lodu, kawałek ananasa i plaster czerwonej pomarańczy</li>
-            </ul>
-            <br>
-
-            <p><b>Przygotowanie:</b></p>
-            <ol class="es-recipes__day-night-recipe-content-ingredients-list">
-              <li>
-                Do shakera wsyp kostki lodu i dodaj mus ananasowy, sok z limonki oraz bazę SodaStream.
-              </li>
-              <li>Zamknij shaker i mocno wstrząsaj przez 15-20 sekund.</li>
-              <li>
-                Napełnij szklankę kostkami lodu i przelej zawartość shakera przez sitko barmańskie.
-              </li>
-              <li>
-                Uzupełnij szklankę wodą gazowaną, delikatnie mieszając napój.
-              </li>
-              <li>
-                Udekoruj kawałkiem ananasa i plasterkiem suszonej pomarańczy.
-              </li>
-            </ol>
-          </div>
+    <div class="es-possibilities">
+      <div class="es-possibilities__title-container">
+        <div class="es-possibilities__title-group">
+          <h2 class="es-possibilities__title es-possibilities__title--first">
+            Orzeźwiające <br>w dzień
+          </h2>
         </div>
-        <div class="es-recipes__day-night es-recipes__day-night--second">
-          <p class="es-recipes__day-night-label es-recipes__day-night-label--second">
-            Night
-          </p>
-          <img class="es-recipes__img es-recipes__img--night es-recipes__img--night-mobile"
-               src="./images/night-m.png"
-               loading="lazy"
-               alt="Koktajl Night">
-          <img class="es-recipes__img es-recipes__img--night es-recipes__img--night-desktop"
-               src="./images/night.png"
-               loading="lazy"
-               alt="Koktajl Night">
-          <div class="es-recipes__day-night-recipe-content es-recipes__day-night-recipe-content--dark">
-            <p class="es-recipes__day-night-recipe-content-title es-recipes__day-night-recipe-content-title--small">
-              Przepis na wieczór - Koktajl:
-            </p>
-            <p class="es-recipes__day-night-recipe-content-title">
-              Jalapeño <br>Piña Loco
-            </p>
-            <p><b>Składniki:</b><br></p>
-            <ul class="es-recipes__day-night-recipe-content-ingredients-list">
-              <li>35 ml bazy Ananas & Jalapeño</li>
-              <li>70 ml likieru kokosowego</li>
-              <li>10 ml musu ananasowego</li>
-              <li>55 ml wody gazowanej</li>
-              <li>Kostki lodu, plaster i liść ananasa</li>
-            </ul>
 
+        <div class="es-possibilities__title-group">
+          <h2 class="es-possibilities__title es-possibilities__title--second">
+            wyrafinowane <br>nocą!
+          </h2>
+        </div>
+      </div>
+      <img class="es-possibilities__img"
+           src="./images/possibilities.png"
+           loading="lazy"
+           alt="Sodastream Orzeźwiające w dzień i wyrafinowane nocą">
+      <div class="es-possibilities__content">
+        <div class="es-possibilities__left">
+          <img class="es-possibilities__packshot"
+               src="./images/possibilities-bottle.png"
+               loading="lazy"
+               alt="Butelka Sodastream">
+        </div>
+        <div class="es-possibilities__right">
+          <p class="es-possibilities__text">
+            <b>Orzeźwienie w ciągu dnia</b><br>
+            Sięgnij po pyszne moktajle z tropikalnym
+            ananasem i pikantnym jalapeño. Idealne
+            na&nbsp;spotkania z przyjaciółmi, letnie popołudnia
+            czy chwile relaksu – każda pora to dobry czas
+            na SodaStream Crafted.
             <br><br>
+            <b>Wieczór pełen smaku</b><br>
+            Gdy zapada zmrok, zamień swoją kuchnię
+            w&nbsp;domowy bar! Dzięki bazom SodaStream Crafted stworzysz wyrafinowane koktajle, które podkreślą
+            wyjątkowy
+            charakter
+            każdej okazji.
 
-            <p><b>Przygotowanie:</b></p>
-            <ol class="es-recipes__day-night-recipe-content-ingredients-list">
-              <li>
-                Shaker wypełnij do połowy kostkami lodu.
-              </li>
-              <li>
-                Wlej likier kokosowy, mus ananasowy i bazę SodaStream.
-              </li>
-              <li>
-                Zamknij shaker i energicznie wstrząsaj przez 15-20 sekund.
-              </li>
-              <li>
-                Napełnij kieliszek kostkami lodu i przelej zawartość shakera przez sitko barmańskie.
-              </li>
-              <li>Dopełnij kieliszek wodą gazowaną i delikatnie zamieszaj koktajl.</li>
-              <li>Udekoruj plasterkiem i liściem ananasa.</li>
-            </ol>
-          </div>
+          </p>
+          <p class="es-possibilities__subtitle">
+            Poczuj smak<br>
+            w każdym bąbelku!
+          </p>
         </div>
       </div>
+    </div>
 
-      <div class="es-lemonade">
-        <div class="es-lemonade__title-group">
-          <img class="es-lemonade__title-pepper"
-               src="./images/pepper.png"
+    <div class="es-day-night"></div>
+
+    <div class="es-triple">
+      <div class="es-triple__wrapper">
+        <div class="es-triple__mobile-container">
+          <img class="es-triple__img"
+               src="./images/triple-mobile.png"
                loading="lazy"
-               alt="Jalapeño">
-          <p class="es-lemonade__subtitle">Rozsmakuj się w bąbelkach</p>
-          <p class="es-lemonade__subtitle es-lemonade__subtitle--big">SodaStream Crafted<br> Ananas & Jalapeño</p>
+               alt="Gazuj, Miksuj i Smakuj">
+          <p class="es-triple__desc es-triple__desc-mobile--first">gazuj</p>
+          <p class="es-triple__desc es-triple__desc-mobile--second">miksuj</p>
+          <p class="es-triple__desc es-triple__desc-mobile--third">smakuj</p>
         </div>
-        <div class="es-lemonade__content es-lemonade__content--1">
-          <p class="es-lemonade__text es-lemonade__text--first">
-            Bezalkoholowe bazy do drinków
-            SodaStream rozbudzą Twoje zmysły
-            i przeniosą Cię prosto do najlepszych barów świata bez wychodzenia z domu!
-          </p>
-          <img class="es-lemonade__image es-lemonade__image--grapefruit"
-               src="./images/content-1.png"
-               loading="lazy"
-               alt="Obrazek Grejpfrut">
-        </div>
+      </div>
+    </div>
 
-        <div class="es-lemonade__content es-lemonade__content--2">
-          <img class="es-lemonade__image es-lemonade__image--bottle"
-               src="./images/content-2.png"
-               loading="lazy"
-               alt="Opakowanie Sodastream">
+    <div class="es-recipes">
+      <div class="es-recipes__day-night es-recipes__day-night--first">
+        <div class="es-recipes__day-night-group">
+          <p class="es-recipes__day-night-description">
+            <b>Twoja Kuchnia - Twoje Laboratorium Smaku!</b><br>
+            Zamień swoją kuchnię w tętniące życiem laboratorium smaków i odkryj w sobie pasję miksologa. Dodaj
+            gazowaną wodę do bazy
+            SodaStream Crafted, twórz orzeźwiające moktajle oraz wyrafinowane koktajle
+            i&nbsp;bąbelkuj z pasją!
 
-          <p class="es-lemonade__text es-lemonade__text--second">
-            Wystarczy woda gazowana SodaStream
-            i&nbsp;syrop&nbsp;Crafted, aby stworzyć wyśmienite lemoniady
-            lub koktajle z nutą alkoholu.
           </p>
         </div>
+        <p class="es-recipes__day-night-label es-recipes__day-night-label--first">
+          Day
+        </p>
+        <img class="es-recipes__img"
+             src="./images/day.png"
+             loading="lazy"
+             alt="Moktajl Day">
+        <div class="es-recipes__day-night-recipe-content es-recipes__day-night-recipe-content--first">
+          <p class="es-recipes__day-night-recipe-content-title es-recipes__day-night-recipe-content-title--small">
+            Przepis na dzień - Moktajl:
+          </p>
+          <p class="es-recipes__day-night-recipe-content-title">
+            Tropical <br>
+            Pineapple Fizz
+          </p>
+          <p><b>Składniki:</b><br></p>
+          <ul class="es-recipes__day-night-recipe-content-ingredients-list">
+            <li>35 ml bazy Ananas & Jalapeño</li>
+            <li>35 ml bazy Ananas & Jalapeño</li>
+            <li>20 ml soku z limonki</li>
+            <li>45 ml wody gazowanej</li>
+            <li>Kostki lodu, kawałek ananasa i plaster czerwonej pomarańczy</li>
+          </ul>
+          <br>
 
-        <div class="es-lemonade__content es-lemonade__content--3">
-          <div class="es-lemonade__texts">
-            <p class="es-lemonade__text es-lemonade__text--third">
-              Jedna butelka to aż 20 porcji
-              wyjątkowych napojów, dzięki czemu oszczędzisz pieniądze i miejsce
-              w&nbsp;lodówce.
+          <p><b>Przygotowanie:</b></p>
+          <ol class="es-recipes__day-night-recipe-content-ingredients-list">
+            <li>
+              Do shakera wsyp kostki lodu i dodaj mus ananasowy, sok z limonki oraz bazę SodaStream.
+            </li>
+            <li>Zamknij shaker i mocno wstrząsaj przez 15-20 sekund.</li>
+            <li>
+              Napełnij szklankę kostkami lodu i przelej zawartość shakera przez sitko barmańskie.
+            </li>
+            <li>
+              Uzupełnij szklankę wodą gazowaną, delikatnie mieszając napój.
+            </li>
+            <li>
+              Udekoruj kawałkiem ananasa i plasterkiem suszonej pomarańczy.
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="es-recipes__day-night es-recipes__day-night--second">
+        <p class="es-recipes__day-night-label es-recipes__day-night-label--second">
+          Night
+        </p>
+        <img class="es-recipes__img es-recipes__img--night es-recipes__img--night-mobile"
+             src="./images/night-m.png"
+             loading="lazy"
+             alt="Koktajl Night">
+        <img class="es-recipes__img es-recipes__img--night es-recipes__img--night-desktop"
+             src="./images/night.png"
+             loading="lazy"
+             alt="Koktajl Night">
+        <div class="es-recipes__day-night-recipe-content es-recipes__day-night-recipe-content--dark">
+          <p class="es-recipes__day-night-recipe-content-title es-recipes__day-night-recipe-content-title--small">
+            Przepis na wieczór - Koktajl:
+          </p>
+          <p class="es-recipes__day-night-recipe-content-title">
+            Jalapeño <br>Piña Loco
+          </p>
+          <p><b>Składniki:</b><br></p>
+          <ul class="es-recipes__day-night-recipe-content-ingredients-list">
+            <li>35 ml bazy Ananas & Jalapeño</li>
+            <li>70 ml likieru kokosowego</li>
+            <li>10 ml musu ananasowego</li>
+            <li>55 ml wody gazowanej</li>
+            <li>Kostki lodu, plaster i liść ananasa</li>
+          </ul>
+
+          <br><br>
+
+          <p><b>Przygotowanie:</b></p>
+          <ol class="es-recipes__day-night-recipe-content-ingredients-list">
+            <li>
+              Shaker wypełnij do połowy kostkami lodu.
+            </li>
+            <li>
+              Wlej likier kokosowy, mus ananasowy i bazę SodaStream.
+            </li>
+            <li>
+              Zamknij shaker i energicznie wstrząsaj przez 15-20 sekund.
+            </li>
+            <li>
+              Napełnij kieliszek kostkami lodu i przelej zawartość shakera przez sitko barmańskie.
+            </li>
+            <li>Dopełnij kieliszek wodą gazowaną i delikatnie zamieszaj koktajl.</li>
+            <li>Udekoruj plasterkiem i liściem ananasa.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="es-lemonade">
+      <div class="es-lemonade__title-group">
+        <img class="es-lemonade__title-pepper"
+             src="./images/pepper.png"
+             loading="lazy"
+             alt="Jalapeño">
+        <p class="es-lemonade__subtitle">Rozsmakuj się w bąbelkach</p>
+        <p class="es-lemonade__subtitle es-lemonade__subtitle--big">SodaStream Crafted<br> Ananas & Jalapeño</p>
+      </div>
+      <div class="es-lemonade__content es-lemonade__content--1">
+        <p class="es-lemonade__text es-lemonade__text--first">
+          Bezalkoholowe bazy do drinków
+          SodaStream rozbudzą Twoje zmysły
+          i przeniosą Cię prosto do najlepszych barów świata bez wychodzenia z domu!
+        </p>
+        <img class="es-lemonade__image es-lemonade__image--grapefruit"
+             src="./images/content-1.png"
+             loading="lazy"
+             alt="Obrazek Grejpfrut">
+      </div>
+
+      <div class="es-lemonade__content es-lemonade__content--2">
+        <img class="es-lemonade__image es-lemonade__image--bottle"
+             src="./images/content-2.png"
+             loading="lazy"
+             alt="Opakowanie Sodastream">
+
+        <p class="es-lemonade__text es-lemonade__text--second">
+          Wystarczy woda gazowana SodaStream
+          i&nbsp;syrop&nbsp;Crafted, aby stworzyć wyśmienite lemoniady
+          lub koktajle z nutą alkoholu.
+        </p>
+      </div>
+
+      <div class="es-lemonade__content es-lemonade__content--3">
+        <div class="es-lemonade__texts">
+          <p class="es-lemonade__text es-lemonade__text--third">
+            Jedna butelka to aż 20 porcji
+            wyjątkowych napojów, dzięki czemu oszczędzisz pieniądze i miejsce
+            w&nbsp;lodówce.
+          </p>
+          <div class="es-lemonade__group">
+            <p class="es-lemonade__group-title">
+              <b>Twój przepis na sukces!</b>
+
+              <br><br>
+              Zalecane proporcje
             </p>
-            <div class="es-lemonade__group">
-              <p class="es-lemonade__group-title">
-                <b>Twój przepis na sukces!</b>
-
-                <br><br>
-                Zalecane proporcje
-              </p>
-              <div class="es-lemonade__group-list">
-                <div class="es-lemonade__group-list-item">
-                  <img class="es-lemonade__group-list-item-image"
-                       src="./images/coctail-1.png"
-                       loading="lazy"
-                       alt="Ikona Moktajl">
-                  <p class="es-lemonade__group-list-item-description">
-                    <b>Moktajl:</b> <br>
-                    1 część bazy SodaStream Crafted +&nbsp;10&nbsp;części wody gazowanej.
-                  </p>
-                </div>
-                <div class="es-lemonade__group-list-item">
-                  <img class="es-lemonade__group-list-item-image"
-                       src="./images/coctail-2.png"
-                       loading="lazy"
-                       alt="Ikona Koktajl">
-                  <p class="es-lemonade__group-list-item-description">
-                    <b>Koktajl:</b> <br>
-                    1 część bazy SodaStream Crafted
-                    +&nbsp;10&nbsp;części wody gazowanej
-                    +&nbsp;2&nbsp;części alkoholu.
-                  </p>
-                </div>
+            <div class="es-lemonade__group-list">
+              <div class="es-lemonade__group-list-item">
+                <img class="es-lemonade__group-list-item-image"
+                     src="./images/coctail-1.png"
+                     loading="lazy"
+                     alt="Ikona Moktajl">
+                <p class="es-lemonade__group-list-item-description">
+                  <b>Moktajl:</b> <br>
+                  1 część bazy SodaStream Crafted <br>+&nbsp;10&nbsp;części wody gazowanej.
+                </p>
+              </div>
+              <div class="es-lemonade__group-list-item">
+                <img class="es-lemonade__group-list-item-image"
+                     src="./images/coctail-2.png"
+                     loading="lazy"
+                     alt="Ikona Koktajl">
+                <p class="es-lemonade__group-list-item-description">
+                  <b>Koktajl:</b> <br>
+                  1 część bazy SodaStream Crafted<br>
+                  +&nbsp;10&nbsp;części wody gazowanej<br>
+                  +&nbsp;2&nbsp;części alkoholu.
+                </p>
               </div>
             </div>
           </div>
-          <div class="es-lemonade__image-group">
-            <p class="es-lemonade__image-group-text">
-              Twórz, mieszaj,<br>
-              zaskakuj!
-            </p>
-            <img class="es-lemonade__image es-lemonade__image--coctail"
-                 src="./images/content-3.png"
-                 loading="lazy"
-                 alt="Koktajl">
-          </div>
+        </div>
+        <div class="es-lemonade__image-group">
+          <p class="es-lemonade__image-group-text">
+            Twórz, mieszaj,<br>
+            zaskakuj!
+          </p>
+          <img class="es-lemonade__image es-lemonade__image--coctail"
+               src="./images/content-3.png"
+               loading="lazy"
+               alt="Koktajl">
         </div>
       </div>
+    </div>
 
-      <div class="es-video">
-        <h2 class="es-video__title es-title">Miksuj bez ograniczeń<br>
-          ze smakowitymi bąbelkami</h2>
-        <div class="es-video__container">
+    <div class="es-video">
+      <h2 class="es-video__title es-title">Miksuj bez ograniczeń<br>
+        ze smakowitymi bąbelkami</h2>
+      <!-- <div class="es-video__container">
           <iframe class="es-video__iframe"
                   title="preference video"
                   width="100%"
@@ -1587,27 +1593,25 @@
                   src="https://www.youtube.com/embed/UnYK8E_pOqk"
                   allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
-        </div>
-        <h2 class="es-video__subtitle-second es-title">
-          Jedna SodaStream&nbsp;– wiele&nbsp;możliwości
-        </h2>
-        <p class="es-video__text es-video__text--second">
-          Dopasuj napoje do swoich preferencji! Klasyczna Pepsi, owocowe orzeźwienie,
-          a może opcje bez dodatku cukru takie jak Pomarańcza Mango? Z syropami SodaStream
-          każda chwila staje się pełna smaku i bąbelków – eksperymentuj i ciesz się różnorodnością.
-        </p>
-      </div>
-
-      <div class="es-photo">
-        <img class="es-photo__img es-photo__img--syrups"
-             src="./images/products.png"
-             loading="lazy"
-             alt="Lista syropów Sodastream">
-        <p class="es-photo__text es-title">
-          Pełnia smaku i pełnia życia w każdym bąbelku
-        </p>
-      </div>
+        </div> -->
+      <h2 class="es-video__subtitle-second es-title">
+        Jedna SodaStream&nbsp;– wiele&nbsp;możliwości
+      </h2>
+      <p class="es-video__text es-video__text--second">
+        Dopasuj napoje do swoich preferencji! Klasyczna Pepsi, owocowe orzeźwienie,
+        a może opcje bez dodatku cukru takie jak Pomarańcza Mango? Z syropami SodaStream
+        każda chwila staje się pełna smaku i bąbelków – eksperymentuj i ciesz się różnorodnością.
+      </p>
     </div>
-  </body>
 
-</html>
+    <div class="es-photo">
+      <img class="es-photo__img es-photo__img--syrups"
+           src="./images/products.png"
+           loading="lazy"
+           alt="Lista syropów Sodastream">
+      <p class="es-photo__text es-title">
+        Pełnia smaku i pełnia życia w każdym bąbelku
+      </p>
+    </div>
+  </div>
+</body>
